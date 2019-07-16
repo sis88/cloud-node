@@ -1,0 +1,24 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t sis88/cloud-node -f Dockerfile.dev .
+  
+
+script:
+  - docker run -e CI=true sis88/cloud-node npm run test -- --coverage
+
+deploy:
+  provider: elasticbeanstack
+  region: "us-east-1"
+  app: "cloud-node"
+  env: "cloudNode-env"
+  bucket_name: "elasticbeanstalk-us-east-1-748475373637"
+  bucket_path: "cloud-node"
+  on:
+      branch: master
+  secret_key_id:
+  secret_access_key: 
+
+  
