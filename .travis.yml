@@ -1,3 +1,6 @@
+language: node_js
+node_js:
+  - 8
 sudo: required
 services:
   - docker
@@ -18,7 +21,7 @@ deploy:
   bucket_path: "cloud-node"
   on:
       branch: master
-  secret_key_id:
-  secret_access_key: 
+  secret_key_id: $AWS_KEY_ID
+  secret_access_key: $AWS_ACCESS_KEY
 
   
