@@ -21,7 +21,8 @@ deploy:
   bucket_path: "cloud-node"
   on:
       branch: master
-  secret_key_id: $ACCESS_KEY_ID
-  secret_access_key: $SECRET_ACCESS_KEY
+  access_key_id: $ACCESS_KEY_ID
+  secret_access_key: 
+    secure: "$SECRET_ACCESS_KEY"
 
   
