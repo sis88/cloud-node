@@ -13,7 +13,7 @@ script:
   - docker run -e CI=true sis88/cloud-node npm run test -- --coverage
 
 deploy:
-  provider: elasticbeanstack
+  provider: elasticbeanstalk
   region: "us-east-1"
   app: "cloud-node"
   env: "cloudNode-env"
